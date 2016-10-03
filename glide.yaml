@@ -6,3 +6,6 @@ import:
   version: v0.7.0
   subpackages:
   - api
+- package: github.com/golang/lint
+  subpackages:
+  - golint

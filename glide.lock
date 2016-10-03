@@ -1,8 +1,12 @@
-hash: faca4cda44fc651f39e410fa6a18025eab731b9640d615618f9d642c694a90f6
-updated: 2016-09-30T12:47:47.809980851-07:00
+hash: 16443f43e1710ae50e33ac6f38411a2396a4d942a67ee3dd4c5cb6055d9e63ff
+updated: 2016-10-03T13:18:23.41601886-07:00
 imports:
 - name: github.com/docopt/docopt-go
   version: 784ddc588536785e7299f7272f39101f7faccc3f
+- name: github.com/golang/lint
+  version: 64229b89515c2a585c623c79a7ccdea71e8589ff
+  subpackages:
+  - golint
 - name: github.com/hashicorp/consul
   version: a189091a3530051285c12c726ca28ea55e015336
   subpackages:

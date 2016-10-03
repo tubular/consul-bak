@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+// Restore reads a file `infile` and saves the result to the Consul cluster at `ipAddress`
 func Restore(ipAddress string, token string, infile string) {
 
 	config := api.DefaultConfig()

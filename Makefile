@@ -5,6 +5,10 @@ PKG := github.com/Tubular/${NAME}
 GIT_COMMIT := $(shell git rev-parse --short HEAD)
 GIT_DESCRIBE := $(shell git describe --tags --always)
 
+
+XC_ARCH := "amd64"
+XC_OS := "darwin linux"
+
 # Prepend our _vendor directory to the system GOPATH
 # so that import path resolution will prioritize
 # our third party snapshots.
@@ -16,14 +20,15 @@ default: build
 build: vet
 	# add -i?
 	@echo "Building consul-backup ${VERSION}"
-	@go build -v -o build/${NAME}-v${VERSION} -ldflags "-X main.GitCommit=${GIT_COMMIT} -X main.GitDescribe=${GIT_DESCRIBE}" ${PKG}
+	@gox \
+		-os=${XC_OS} \
+		-arch=${XC_ARCH} \
+		-ldflags "-X main.GitCommit=${GIT_COMMIT} -X main.GitDescribe=${GIT_DESCRIBE}" \
+		-output build/${NAME}-v${VERSION}-{{.OS}}_{{.Arch}} \
+		${PKG}
 
 doc:
-	godoc -http=:6060 -index
-
-dist:
-	@echo "nothing defined"
-	# todo make deb or something?
+	godoc ${PKG} -http=:6060 -index
 
 # http://golang.org/cmd/go/#hdr-Run_gofmt_on_package_sources
 fmt:
@@ -32,13 +37,13 @@ fmt:
 # https://github.com/golang/lint
 # go get github.com/golang/lint/golint
 lint:
-	golint ./app
+	golint .
 
 run: build
 	./build/${NAME}-v${VERSION}
 
-test:
-	go test ./app/...
+test:	vendor_get
+	go test .
 
 vendor_clean:
 	rm -dRf ./vendor

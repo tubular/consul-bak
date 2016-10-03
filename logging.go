@@ -8,6 +8,7 @@ import (
 var logger = logging.MustGetLogger("consul-backup")
 var format = logging.MustStringFormatter(`%{time:2006-01-02 15:04:05.000} %{color}%{level}%{color:reset} (consul-backup):  %{message}`)
 
+// SetupLogging setup up logging infra, should be called once on start
 func SetupLogging() {
 	logging.Reset()
 	handler := logging.NewLogBackend(os.Stdout, "", 0)

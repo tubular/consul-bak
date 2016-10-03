@@ -8,14 +8,14 @@ import (
 	"sort"
 )
 
+// ByCreateIndex sorts consul KV pairs
 type ByCreateIndex api.KVPairs
 
-func (a ByCreateIndex) Len() int      { return len(a) }
-func (a ByCreateIndex) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
-
-//Sort the KVs by createIndex
+func (a ByCreateIndex) Len() int           { return len(a) }
+func (a ByCreateIndex) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a ByCreateIndex) Less(i, j int) bool { return a[i].CreateIndex < a[j].CreateIndex }
 
+// Backup talks to Consul and starts reading KV pais and writes them to a file
 func Backup(ipAddress string, token string, outfile string, exclusion []string, inclusion []string) {
 
 	config := api.DefaultConfig()
@@ -73,6 +73,7 @@ func Backup(ipAddress string, token string, outfile string, exclusion []string, 
 	logger.Infof("Wrote %d KV pairs to %s", len(pairs), outfile)
 }
 
+// BackupACLs talks to Consul and starts printing ACL rules currently in place
 func BackupACLs(ipAddress string, token string, outfile string) {
 
 	config := api.DefaultConfig()
