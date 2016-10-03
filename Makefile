@@ -46,7 +46,7 @@ test:	vendor_get
 	go test .
 
 vendor_clean:
-	rm -dRf ./vendor
+	rm -rf ./vendor
 
 # We have to set GOPATH to just the _vendor
 # directory to ensure that `go get` doesn't

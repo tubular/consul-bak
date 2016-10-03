@@ -1,4 +1,4 @@
-# Consul [![Build Status](https://travis-ci.org/Tubular/consul-backup.png)](https://travis-ci.org/Tubular/consul-backup)
+# Consul Backup [![Build Status](https://travis-ci.org/Tubular/consul-backup.png)](https://travis-ci.org/Tubular/consul-backup)
 
 This will use consul-api (Go library) to recursively backup and restore all your key/value pairs.
 You need to set up your Go environment, then run `make`, which will generate executable named `consul-backup`.

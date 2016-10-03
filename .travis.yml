@@ -15,4 +15,4 @@ before_install:
 script:
   - make test
 
-sudo: false
+sudo: required
