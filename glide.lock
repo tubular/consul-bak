@@ -1,0 +1,18 @@
+hash: faca4cda44fc651f39e410fa6a18025eab731b9640d615618f9d642c694a90f6
+updated: 2016-09-30T12:47:47.809980851-07:00
+imports:
+- name: github.com/docopt/docopt-go
+  version: 784ddc588536785e7299f7272f39101f7faccc3f
+- name: github.com/hashicorp/consul
+  version: a189091a3530051285c12c726ca28ea55e015336
+  subpackages:
+  - api
+- name: github.com/hashicorp/go-cleanhttp
+  version: ad28ea4487f05916463e2423a55166280e8254b5
+- name: github.com/hashicorp/serf
+  version: b7a120a5fc494f6dd5e858f42fd0fd4022d6320f
+  subpackages:
+  - coordinate
+- name: github.com/op/go-logging
+  version: 970db520ece77730c7e4724c61121037378659d9
+testImports: []
