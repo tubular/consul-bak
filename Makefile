@@ -43,7 +43,7 @@ run: build
 	./build/${NAME}-v${VERSION}
 
 test:	vendor_get
-	go test .
+	go test ./tests
 
 vendor_clean:
 	rm -rf ./vendor
