@@ -54,10 +54,15 @@ Options:
 		// if consul client is not available we keep running
 		if Which("consul") {
 			var out = ConsulBinaryCall("info", rpcOptString)
-			if strings.Contains(out, "leader = false") {
-				logger.Error("Not a Consul leader. Stopping.")
+			if strings.Contains(out, "leader = true") {
+				logger.Info("Consul leader, continuing.")
+			} else {
+				logger.Error("Not a Consul leader, stopping.")
 				os.Exit(1)
 			}
+		} else {
+			logger.Error("Could not find `consul` utility. Is your $PATH setup properly?")
+			os.Exit(1)
 		}
 	}
 
