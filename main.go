@@ -14,11 +14,11 @@ func main() {
 Version: %s (Commit: %s)
 
 Usage:
-  consul-backup [-i IP] [--http-port HTTPPORT] [--rpc-port RPCPORT]
+  consul-bak [-i IP] [--http-port HTTPPORT] [--rpc-port RPCPORT]
                 [-l] [-t TOKEN] [-a] [-b ACLBACKUPFILE] [-n INPREFIX]...
                 [-x EXPREFIX]... [--restore] [--no-prompt] <filename>
-  consul-backup -h | --help
-  consul-backup --version
+  consul-bak -h | --help
+  consul-bak --version
 
 Options:
   -h --help                          Show this screen.
@@ -35,7 +35,7 @@ Options:
   -r, --restore                      Activate restore mode.
   --no-prompt                        Don't prompt, force overwrite in restore mode.`, Version, GitCommit)
 
-	arguments, _ := docopt.Parse(usage, nil, true, fmt.Sprintf("consul-backup %s (%s)", Version, GitCommit), false)
+	arguments, _ := docopt.Parse(usage, nil, true, fmt.Sprintf("consul-bak %s (%s)", Version, GitCommit), false)
 	SetupLogging()
 
 	var (

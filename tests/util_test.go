@@ -3,7 +3,7 @@ package main_test
 import (
 	//"errors"
 	"fmt"
-	consulbackup "github.com/Tubular/consul-backup"
+	consulbak "github.com/Tubular/consul-bak"
 	"os/exec"
 	"testing"
 )
@@ -21,7 +21,7 @@ var tests = []testCasePair{
 
 func TestStartsWith(t *testing.T) {
 	for _, testCase := range tests {
-		result := consulbackup.StartsWith(testCase.value, testCase.prefix)
+		result := consulbak.StartsWith(testCase.value, testCase.prefix)
 		if result != testCase.expect {
 			t.Errorf("For: %s in %s expected %t, actual: %t", testCase.value, testCase.prefix, testCase.expect, result)
 		}

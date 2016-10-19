@@ -5,8 +5,8 @@ import (
 	"os"
 )
 
-var logger = logging.MustGetLogger("consul-backup")
-var format = logging.MustStringFormatter(`%{time:2006-01-02 15:04:05.000} %{color}%{level}%{color:reset} (consul-backup):  %{message}`)
+var logger = logging.MustGetLogger("consul-bak")
+var format = logging.MustStringFormatter(`%{time:2006-01-02 15:04:05.000} %{color}%{level}%{color:reset} (consul-bak):  %{message}`)
 
 // SetupLogging setup up logging infra, should be called once on start
 func SetupLogging() {

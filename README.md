@@ -1,4 +1,4 @@
-# Consul Backup [![Build Status](https://travis-ci.org/Tubular/consul-backup.png)](https://travis-ci.org/Tubular/consul-backup)
+# Consul Bak [![Build Status](https://travis-ci.org/Tubular/consul-bak.png)](https://travis-ci.org/Tubular/consul-bak)
 
 Backs up and restores KV pairs in a Consul cluster using the consul-api Go library.
 
@@ -10,11 +10,11 @@ Backs up and restores KV pairs in a Consul cluster using the consul-api Go libra
 
 ```sh
 Usage:
-  consul-backup [-i IP] [--http-port HTTPPORT] [--rpc-port RPCPORT]
+  consul-bak [-i IP] [--http-port HTTPPORT] [--rpc-port RPCPORT]
                 [-l] [-t TOKEN] [-a] [-b ACLBACKUPFILE] [-n INPREFIX]...
                 [-x EXPREFIX]... [--restore] [--no-prompt] <filename>
-  consul-backup -h | --help
-  consul-backup --version
+  consul-bak -h | --help
+  consul-bak --version
 
 Options:
   -h --help                          Show this screen.
@@ -38,7 +38,7 @@ Options:
 
 ```
 # Somewhere in your GOPATH
-git clone git@github.com:Tubular/consul-backug.git
+git clone git@github.com:Tubular/consul-bak.git
 
 # Get requirements
 glide install
@@ -56,4 +56,4 @@ vi version.go && git commit -m "Bump version to #.#.#" && git tag -a "Released #
 ```
 
 
-*Code forked from work done here: https://github.com/kailunshi/consul-backup*
+*Code inspired by work done here: https://github.com/kailunshi/consul-backup*

@@ -1,4 +1,4 @@
-package: github.com/Tubular/consul-backup
+package: github.com/Tubular/consul-bak
 import:
 - package: github.com/docopt/docopt-go
   version: 0.6.2

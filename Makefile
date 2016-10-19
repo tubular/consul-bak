@@ -1,5 +1,5 @@
 VERSION := $(shell awk -F\" '/^const Version/ { print $$2; exit }' version.go)
-NAME := consul-backup
+NAME := consul-bak
 PKG := github.com/Tubular/${NAME}
 
 GIT_COMMIT := $(shell git rev-parse --short HEAD)
@@ -19,7 +19,7 @@ default: build
 
 build: vet
 	# add -i?
-	@echo "Building consul-backup ${VERSION}"
+	@echo "Building consul-bak ${VERSION}"
 	@gox \
 		-os=${XC_OS} \
 		-arch=${XC_ARCH} \
