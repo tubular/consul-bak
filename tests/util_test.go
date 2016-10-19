@@ -1,10 +1,7 @@
 package main_test
 
 import (
-	//"errors"
-	"fmt"
 	consulbak "github.com/Tubular/consul-bak"
-	"os/exec"
 	"testing"
 )
 
