@@ -7,4 +7,4 @@ var (
 )
 
 // Version contains the current version being run
-const Version = "0.0.2"
+const Version = "0.1.0"
