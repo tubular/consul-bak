@@ -23,6 +23,7 @@ Usage:
                 [--exclude-prefix EXPREFIX]...
                 [--token TOKEN]
                 [--no-prompt]
+                [--force]
                 <filename>
   consul-bak dumptree
                 [--leader-only]
